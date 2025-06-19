@@ -4,7 +4,6 @@ export function generateMfaCode(secret: string): string {
   for (let i = 0; i < secret.length; i++) {
     hash = (hash * 31 + secret.charCodeAt(i)) % 1000000;
   }
-  debugger;
   console.log('Generated hash:', hash);//782852
   return hash.toString().padStart(6, '0');
 }

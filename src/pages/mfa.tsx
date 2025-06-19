@@ -8,30 +8,6 @@ export default function MfaPage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     setError('');
-//     setLoading(true);
-//     try {
-//       const res = await fetch('/api/verifyMfa', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ username, code }),
-//       });
-//       const data = await res.json();
-//       if (res.ok && data.success) {
-//         router.push('/transactions');
-//       } else {
-//         setError(data.message || 'Invalid code.');
-//       }
-//     } catch {
-//       setError('Network error.');
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-
-
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setError('');

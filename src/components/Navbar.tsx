@@ -14,7 +14,6 @@ const menuItems = [
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-
   return (
     <>
       {/* Navbar */}

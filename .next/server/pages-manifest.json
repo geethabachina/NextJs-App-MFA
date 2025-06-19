@@ -2,12 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/transactions": "pages/transactions.js",
   "/login": "pages/login.js",
   "/mfa": "pages/mfa.js",
-  "/dashboard": "pages/dashboard.js",
-  "/api/getSecureWord": "pages/api/getSecureWord.js",
-  "/api/login": "pages/api/login.js",
-  "/api/verifyMfa": "pages/api/verifyMfa.js",
-  "/transactions": "pages/transactions.js",
   "/api/transaction-history": "pages/api/transaction-history.js"
 }

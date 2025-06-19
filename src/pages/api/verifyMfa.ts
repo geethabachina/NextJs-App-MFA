@@ -23,10 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(400).json({ message: 'Username and code are required' });
   }
 
-  // For demo: use username as secret (in real apps, use per-user secret)
-//   const secret = username + '-secret-key';
   const secret = 'user-secret-key';
-  
   const validCode = generateMfaCode(secret);
 
   // Get or create attempt entry

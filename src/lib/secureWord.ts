@@ -17,7 +17,6 @@ export function generateSecureWord(username: string) {
   if (entry && now - entry.lastRequested < 10_000) {
     throw new Error('Please wait before requesting again.');
   }
-
   // Generate secure word (HMAC of username + timestamp)
   const issuedAt = now;
   const secureWord = crypto
@@ -29,16 +28,13 @@ export function generateSecureWord(username: string) {
 
   // Save to store
   store.set(username, { secureWord, issuedAt, lastRequested: now });
-
   // Clean up expired entries
   for (const [user, data] of store.entries()) {
     if (now - data.issuedAt > 60_000) {
       store.delete(user);
     }
   }
-
   return { secureWord, expiresIn: 60 };
-  
 }
 export function getSecureWordStore() {
   return store;

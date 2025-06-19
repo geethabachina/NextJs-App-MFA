@@ -41,7 +41,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (Date.now() - entry.issuedAt > 60_000) {
     return res.status(401).json({ message: 'Secure word expired' });
   }
-
   // Success: return mock token
   const token = generateMockToken(username);
   return res.status(200).json({ token });

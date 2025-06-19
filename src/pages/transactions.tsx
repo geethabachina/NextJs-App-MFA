@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 
 type Transaction = {
   date: string;
@@ -23,7 +23,7 @@ export default function TransactionsPage() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div style={{ maxWidth: 900, margin: '2rem auto', background: '#fff', borderRadius: 10, boxShadow: '0 2px 12px #0001', padding: '2rem' }}>
         <h2 style={{ marginBottom: 24 }}>Transaction History</h2>
         <div style={{ overflowX: 'auto' }}>

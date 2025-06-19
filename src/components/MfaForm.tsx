@@ -10,7 +10,7 @@ const MfaForm = () => {
         setError('');
         setSuccess(false);
 
-        // Mock API call to verify MFA code
+        // API call to verify MFA code
         const response = await fetch('/api/verify-mfa', {
             method: 'POST',
             headers: {
@@ -18,10 +18,9 @@ const MfaForm = () => {
             },
             body: JSON.stringify({ code: mfaCode }),
         });
-
+        console.log('verify-mfa response',response);
         if (response.ok) {
             setSuccess(true);
-            // Handle successful MFA verification (e.g., redirect to dashboard)
         } else {
             setError('Invalid MFA code. Please try again.');
         }

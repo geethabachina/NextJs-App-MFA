@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { login } from '../lib/mockApi';
 import { useRouter } from 'next/router';
 
 interface LoginFormProps {
@@ -46,14 +45,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
     }
   };
 
-//   const handlePasswordSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     setError('');
-//     await onLogin(username, password);
-//   };
-
-   // ...existing code...
-
 // Helper to hash password using SHA-256
 async function hashPassword(password: string): Promise<string> {
   const encoder = new TextEncoder();
@@ -70,7 +61,6 @@ const handlePasswordSubmit = async (e: React.FormEvent) => {
 
   try {
     const hashedPassword = await hashPassword(password);
-
     const response = await fetch('/api/login', {
       method: 'POST',
       headers: {
@@ -87,10 +77,6 @@ const handlePasswordSubmit = async (e: React.FormEvent) => {
         console.log('Login successful:', data);
         router.push('/mfa');
     }
-
-    // You may want to handle the response here (e.g., redirect)
-    // const data = await response.json();
-    // setSecureWord(data.secureWord);
   } catch (err) {
     if (err instanceof Error) {
       setError(err.message);
@@ -99,7 +85,6 @@ const handlePasswordSubmit = async (e: React.FormEvent) => {
     }
   }
 };
-
 
 return (
   <div
